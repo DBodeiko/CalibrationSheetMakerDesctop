@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self';">
+    <title>Calibration Sheet Generator</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+
+<body>
+    <h1 class="title">Calibration Sheet Generator</h1>
+    <div class="container">
+        <div class="deviationflowrange">
+            <div class="deviation-switcher">
+                <input class="deviation-switcher-checkbox"  type="checkbox"></input>
+                <label class="deviation-switcher-label" for=""><span class="deviation-switcher-label-span">FS</span></label>
+            </div>
+            <input type="text" required placeholder="FLOWRANGE" class="flowrange">
+        </div>
+        <div class="aims">
+            <div class="aims-switcher">
+                <input class="aims-switcher-checkbox" type="checkbox"></input>
+                <label class="aims-switcher-label" for=""><span class="aims-switcher-label-span">DEFAULT</span></label>
+            </div>
+            <input type="text" disabled placeholder="AIMS" class="aims-input" >
+        </div>
+        <div class="resulttable">
+            <div class="dutflowresult">
+                <div class="dutflowresult-title">DUT flow</div>
+            </div>
+            <div class="refflowresult">
+                <div class="refflowresult-title">Ref flow</div>
+            </div>
+            <div class="deviationresult">
+                <div class="deviationresult-title">Deviation</div>
+            </div>
+        </div>
+    </div>
+
+    <table class="exportTable" id="TableToExport" data-cols-width="70,15,10">
+        <tbody class="tableBody">
+            <tr>
+                <td>DUT flow</td>
+                <td>Ref flow</td>
+                <td>Deviation</td>
+            </tr>
+        </tbody>
+      </table>
+
+      <button class="exportButton" id="sheetjsexport">Export Excel</button>   
+      <script src="./xlsx.full.min.js"></script>
+      <script  src="./main.js"></script>
+
+</body>
+
+</html>

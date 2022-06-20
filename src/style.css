@@ -1,0 +1,322 @@
+/* Fonts */
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    src: local(''),
+        url('./fonts/NotoSans-Regular.ttf') format('truetype')
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 700;
+    src: local(''),
+        url('./fonts/NotoSans-Bold.ttf') format('truetype')
+
+}
+
+/* General Styles */
+
+.container {
+    font-family: 'Noto Sans', sans-serif;
+    position: relative;
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+
+body {
+    font-weight: 400;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: lightgrey;
+}
+
+/* Params Styles */
+
+.deviationflowrange {
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.deviation-switcher  {
+    display: none;
+    margin-right: 50px;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 30px;
+    overflow: hidden;
+    width: 50px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: black;
+    position: relative;
+    padding-right: 50px;
+    position: relative;
+    box-shadow:
+        inset 0 2px 0 rgba(0, 0, 0, 0.2),
+        0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.deviation-switcher:before {
+    
+    content: "RD";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.deviation-switcher-checkbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+
+
+
+.deviation-switcher-checkbox:checked+.deviation-switcher-label:before {
+    transform: translateX(50px);
+    transition: transform 300ms linear;
+}
+
+.deviation-switcher-checkbox+.deviation-switcher-label {
+    position: relative;
+    padding: 15px 0;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+.deviation-switcher-checkbox+.deviation-switcher-label:before {
+    content: "";
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    transform: translateX(0);
+    transition: transform 300ms;
+    box-shadow:
+        inset rgba(0, 0, 0, 0.5) -8px -8px 30px 5px;
+}
+
+.deviation-switcher-checkbox+.deviation-switcher-label .deviation-switcher-label-span {
+    position: relative;
+}
+
+.flowrange {
+    margin: 0 auto;
+    outline:none;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 30px;
+    height: 49px;
+    width: 120px;
+    font-size: 14px;
+    border: none;
+    color: black;
+    box-shadow:
+        inset 0 2px 0 rgba(0, 0, 0, 0.2),
+        0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+.aims {
+    font-family: 'Noto Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.aims-switcher  {
+    /* margin-right: 50px; */
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 30px;
+    overflow: hidden;
+    width: 100px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: black;
+    position: relative;
+    padding-right: 100px;
+    position: relative;
+    box-shadow:
+        inset 0 2px 0 rgba(0, 0, 0, 0.2),
+        0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.aims-switcher:before {
+    
+    content: "CUSTOM";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.aims-switcher-checkbox {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 2;
+}
+
+
+
+.aims-switcher-checkbox:checked+.aims-switcher-label:before {
+    transform: translateX(100px);
+    transition: transform 300ms linear;
+}
+
+.aims-switcher-checkbox+.aims-switcher-label {
+    position: relative;
+    padding: 15px 0;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+}
+
+.aims-switcher-checkbox+.aims-switcher-label:before {
+    content: "";
+    background: #fff;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 30px;
+    transform: translateX(0);
+    transition: transform 300ms;
+    box-shadow:
+        inset rgba(0, 0, 0, 0.5) -8px -8px 50px 5px;
+}
+
+.aims-switcher-checkbox+.aims-switcher-label .aims-switcher-label-span {
+    position: relative;
+}
+
+.aims-input {
+    margin-left: 50px;
+    outline:none;
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 30px;
+    height: 49px;
+    width: 260px;
+    font-size: 14px;
+    border: none;
+    color: black;
+    box-shadow:
+        inset 0 2px 0 rgba(0, 0, 0, 0.2),
+        0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+/* SHEET */
+
+.resulttable {
+    text-align: center;
+    padding: 15px 0 15px 0;
+    width: 900px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.56);
+    box-shadow:
+    inset 0 2px 0 rgba(0, 0, 0, 0.2),
+    0 0 4px rgba(0, 0, 0, 0.1);
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 400;
+    margin: 50px auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+.deviationresult-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.refflowresult-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.dutflowresult-title {
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.dutflowresult-value {
+    margin-top: 10px;
+}
+
+.refflowresult-value {
+    margin-top: 10px;
+}
+
+.deviationresult-value {
+    margin-top: 10px;
+}
+
+.exportTable {
+    display: none;
+}
+
+.exportButton {
+    border: none;
+    height: 40px;
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    border-radius: 30px;
+    transition: transform 300ms;
+    box-shadow:
+        inset rgba(0, 0, 0, 0.5) -10px -10px 50px 5px;
+}
+
+.exportButton:active {
+    box-shadow: inset rgba(0, 0, 0, 0.5) -5px -5px 40px 3px;
+    transform: translateY(5px);
+}
